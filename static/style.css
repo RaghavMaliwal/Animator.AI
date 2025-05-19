@@ -1,0 +1,236 @@
+body {
+  margin: 0%;
+  padding: 0%;
+}
+
+.hero-section {
+  margin: 0;
+  background: #f0f2f5;
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  display: flex;
+  background: white;
+  width: 90%;
+  max-width: 1000px;
+  height: 500px;
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+}
+
+.prompt-section,
+.video-section {
+  flex: 1;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  position: relative;
+}
+
+.window-header {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.red {
+  background-color: #ff5f56;
+}
+.yellow {
+  background-color: #ffbd2e;
+}
+.green {
+  background-color: #27c93f;
+}
+
+.prompt-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  font-family: "Poppins", "Courier New", Courier, monospace;
+  color: #333;
+  font-size: 1.1rem;
+  font-weight: 900;
+}
+
+.prompt-content label {
+  margin: 0.5rem 0;
+}
+
+textarea {
+  resize: none;
+  height: 180px;
+  border: none;
+  border-radius: 10px;
+  padding: 1rem;
+  font-size: 1rem;
+  font-family: "Poppins", sans-serif;
+  outline: none;
+  background: #f7f9fc;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+button {
+  margin-top: 1rem;
+  padding: 0.8rem;
+  background-color: #6a5acd;
+  color: white;
+  font-family: "Poppins";
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #483d8b;
+}
+
+.spinner {
+  margin: auto;
+  width: 50px;
+  height: 50px;
+  border: 6px solid #f3f3f3;
+  border-top: 6px solid #6a5acd;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.video-section {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f9f9f9;
+  border-left: 1px solid #eee;
+}
+
+.video-section video {
+  width: 90%;
+  max-width: 480px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+}
+
+.video-section video:hover {
+  transform: scale(1.01);
+}
+
+.download-icon {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  background: white;
+  padding: 10px;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.2s ease;
+}
+
+.video-section:hover .download-icon {
+  opacity: 1;
+  transform: translateY(-2px);
+}
+
+.download-icon::before {
+  content: "";
+  display: inline-block;
+  background-image: url('data:image/svg+xml;utf8,<svg fill="none" stroke="black" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5m0 0l5-5m-5 5V4"/></svg>');
+  background-size: 20px;
+  background-repeat: no-repeat;
+  width: 24px;
+  height: 24px;
+}
+
+.gallery-section {
+  background: white;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.gallery-section h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #222;
+  font-weight: 600;
+  font-family: "Poppins";
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  justify-items: center;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.gallery-video {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.gallery-video video {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+.gallery-video.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #6a5acd;
+  font-family: "Poppins";
+}
+
+.logo-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-section img {
+  height: 120px;
+  width: auto;
+}

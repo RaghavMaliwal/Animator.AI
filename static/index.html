@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Animator</title>
+    <link rel="stylesheet" href="style.css?v=4.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="header">
+      <div class="logo-section">
+        <img src="./logo/logo_new.png" alt="logo" />
+      </div>
+    </div>
+    <div class="hero-section">
+      <div class="container">
+        <div class="prompt-section">
+          <div class="window-header">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+          </div>
+          <div class="prompt-content">
+            <label for="prompt">prompt {</label>
+            <textarea id="prompt"></textarea>
+            <label>}</label>
+            <button id="generateBtn" onclick="generateAnimation()">
+              ✨ Animate
+            </button>
+          </div>
+        </div>
+        <div class="video-section" id="result">
+          <!-- Spinner or Video appears here -->
+        </div>
+      </div>
+    </div>
+
+    <div class="gallery-section">
+      <h2>Highlights from AI Animator</h2>
+      <div class="gallery-grid">
+        <div class="gallery-video">
+          <video muted playsinline preload="none" data-autoplay>
+            <source src="./demo/video1.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div class="gallery-video">
+          <video muted playsinline preload="none" data-autoplay>
+            <source src="./demo/video2.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div class="gallery-video">
+          <video muted playsinline preload="none" data-autoplay>
+            <source src="./demo/video3.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div class="gallery-video">
+          <video muted playsinline preload="none" data-autoplay>
+            <source src="./demo/video4.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div class="gallery-video">
+          <video muted playsinline preload="none" data-autoplay>
+            <source src="./demo/video5.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div class="gallery-video">
+          <video muted playsinline preload="none" data-autoplay>
+            <source src="./demo/video6.mp4" type="video/mp4" />
+          </video>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+      const videos = document.querySelectorAll("video[data-autoplay]");
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            const video = entry.target;
+            if (entry.isIntersecting) {
+              video.play();
+              video.parentElement.classList.add("in-view");
+            } else {
+              video.pause();
+            }
+          });
+        },
+        { threshold: 0.6 }
+      );
+
+      videos.forEach((video) => {
+        observer.observe(video);
+      });
+    </script>
+  </body>
+</html>
