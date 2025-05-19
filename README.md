@@ -19,13 +19,9 @@ AI Animator is a web application that generates Manim animations from natural la
 ## How It Works
 
 1. **User Prompt:**  The user enters a prompt (e.g., "Show a circle transforming into a square").
-
 2. **API Request:**   The frontend sends the prompt to `/api/generate-animation`.
-
 3. **Code Generation:**  The backend uses OpenRouter's LLM to generate Manim v0.18.0 code based on the prompt.
-
 4. **Animation Rendering:**  The generated code is executed by Manim, producing a video file.
-
 5. **Video Delivery:**  The rendered video is served back to the frontend for viewing and download.
 ---
 ## Getting Started
