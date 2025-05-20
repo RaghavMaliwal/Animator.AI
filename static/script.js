@@ -32,7 +32,7 @@ async function generateAnimation() {
     const { videoUrl } = data;
 
     resultDiv.innerHTML = `
-      <div class="download-icon" onclick="window.open('${videoUrl}', '_blank')"></div>
+      <div class="download-icon"><a href="${videoUrl}" download="video.mp4"></a></div>
       <video controls>
         <source src="${videoUrl}" type="video/mp4" />
         Your browser does not support the video tag.
