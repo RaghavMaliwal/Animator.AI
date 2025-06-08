@@ -1,7 +1,8 @@
 # AI Animator: Text-to-Animation Web App
 
 
-**Video Demo:** [![Watch the video](https://img.youtube.com/vi/wxULek51Qhs/maxresdefault.jpg)](https://youtu.be/wxULek51Qhs)
+**Video Demo:** [https://youtu.be/wxULek51Qhs](https://youtu.be/wxULek51Qhs)
+
 **Live Demo:** [https://animator-ai.onrender.com/static](https://animator-ai.onrender.com/static)
 
 AI Animator is a web application that generates Manim animations from natural language prompts. Leveraging FastAPI, OpenRouter's LLMs, and Manim, users can describe an animation in plain English and instantly receive a rendered video. The app features a modern UI and supports easy download of generated animations.
@@ -92,6 +93,9 @@ docker run -p 8000:8000 --env-file .env ai-animator
 
 ---
 ## Screenshots
+
+![Watch the video](screenshots/hero-section.png)
+![Watch the video](screenshots/video-section.png)
 
 ---
 
