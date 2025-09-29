@@ -32,6 +32,8 @@ async def generate_animation(data: PromptRequest):
     prompt = data.prompt
 
     try:
+        print("OPENROUTER_API_KEY:", OPENROUTER_API_KEY[:8] + "..." if OPENROUTER_API_KEY else "MISSING")
+
         # Step 1: Generate Python code using OpenRouter
         system_prompt = (
             "You are a Python expert specialized in Manim animation. Given a user prompt, "
