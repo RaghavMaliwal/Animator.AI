@@ -47,7 +47,7 @@ async def generate_animation(data: PromptRequest):
         }
 
         payload = {
-            "model": "meta-llama/llama-4-maverick:free",
+            "model": "x-ai/grok-4-fast:free",
             "messages": [
                 {"role": "system", "content": system_prompt},
                 {"role": "user", "content": prompt}
